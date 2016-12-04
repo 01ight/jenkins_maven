@@ -1,8 +1,7 @@
 node {
-    def workspace = pwd() 
-	
+  def mvnHome = tool 'M3'
+ 
    stage 'mvn package'
-      echo workspace
-      sh 'mvn clean package'
+      sh "${mvnHome}/bin/mvn clean package"
       echo 'mvn task finished'	
 }
